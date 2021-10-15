@@ -1,14 +1,11 @@
-body {
-    margin: 0;
-}
-
-#nav {c
+#nav {
     display: flex;
     justify-content: flex-end;
+    margin-top: 15px;
 }
 
 a {
-    margin-right: none;
+    text-decoration: none;
 }
 a:hover {
     text-decoration: underline;
@@ -44,7 +41,7 @@ a:hover {
     position: relative;
 }
 #search,#voice {
-    position: relative;
+    position: absolute;
     top: 0;
     height: 100%;
     display: flex;
@@ -67,7 +64,7 @@ a:hover {
     width: 500px;
     padding-left: 30px;
     border-radius: 15px;
-    border: 1px solid #eeeeee;
+    border: 1px solid #c4c4c4;
 }
 #searchbar:hover {
     box-shadow: 0 0 10px 2px black;
