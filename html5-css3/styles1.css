@@ -1,0 +1,25 @@
+#row {
+    display: flex;
+    height: 200px;
+    border: 1px solid black;
+    align-items: stretch;
+}
+
+p {
+    background-color: blue;
+    margin: 2px;
+    padding: 0;
+    color: white;
+}
+
+
+
+#row div {
+    background: red;
+    margin: 2px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
