@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Conten-Type" content="text/html"; charset="UTF-8">
+        <title>select practise</title>
+        <script type="text/javascript">
+            window.onload = function(){
+                var checkAllBox = document.getElementById("checkAllBox");
+                checkAllBox.checked = false;
+                var checkAllBtn = document.getElementById("checkedAllBtn");
+                checkAllBtn.onclick = function(){
+                    var items = document.getElementsByName("items");
+                    for (var i= 0; i < items.length; i++){
+                        items[i].checked = true;
+                    }
+                    checkAllBox.checked = true;
+                }
+
+                var checkNoneBtn = document.getElementById("checkNoneBtn");
+                checkNoneBtn.onclick = function(){
+                    var items = document.getElementsByName("items");
+                    for (var i= 0; i < items.length; i++){
+                        items[i].checked = false;
+                    }
+                    checkAllBox.checked = false;
+                }
+
+                var reverseBtn = document.getElementById("checkedRevBtn");
+                reverseBtn.onclick = function(){
+                    checkAllBox.checked = true;
+                    var items = document.getElementsByName("items");
+                    for (var i= 0; i < items.length; i++){
+                        items[i].checked = !items[i].checked;
+                        if (!items[i].checked)
+                            checkAllBox.checked = false;
+                    }
+                }
+
+                var sendBtn = document.getElementById("sendBtn");
+                sendBtn.onclick = function(){
+                    var items = document.getElementsByName("items");
+                    for (var i= 0; i < items.length; i++){
+                        if (items[i].checked){
+                            console.log(items[i].value);
+                        }
+                    }
+                }
+
+                
+                checkAllBox.onclick = function(){
+                    var items = document.getElementsByName("items");
+                    for (var i= 0; i < items.length; i++){
+                        items[i].checked = this.checked;
+                    }
+                    
+                }
+                var items = document.getElementsByName("items");
+                for (var i = 0; i < items.length; i++){
+                    items[i].onclick = function(){
+                        checkAllBox.checked = true;
+                        for (var j = 0; j < items.length; j++){
+                            if (!items[j].checked){
+                                checkAllBox.checked = false;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        </script>
+    </head>
+    <body>
+        <form method="post" action="">
+            which sport do you like? <input type="checkbox" id="checkAllBox"/> Select All/Select None
+            <br/>
+            <input type="checkbox" id="2000" name="items" value="football" /> football1
+            <input type="checkbox" name="items" value="basketball" /> basketball
+            <input type="checkbox" name="items" value="badminton" /> badminton
+            <input type="checkbox" name="items" value="pingpang" /> pingpang
+            <br/>
+            <input type="button" id="checkedAllBtn" value="Select All" />
+            <input type="button" id="checkNoneBtn" value="Select None" />
+            <input type="button" id="checkedRevBtn" value="reverse" />
+            <input type="button" id="sendBtn" value="Submit" />
+        </form>
+    </body>
+</html>

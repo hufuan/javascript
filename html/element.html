@@ -1,0 +1,22 @@
+<body>
+<haha id="wrapper">hello world</div>
+
+<script type="text/javascript">
+
+    var wrapper = document.getElementById("wrapper");
+    var node = document.getElementById("wrapper").getAttributeNode("id");
+    var text = document.getElementById("wrapper").firstChild;
+    console.log("element node...");
+    console.log(wrapper.nodeName);
+    console.log(wrapper.nodeType);    
+    console.log(wrapper.nodeValue);    
+    console.log("Attribute node...");
+    console.log(node.nodeName); 
+    console.log(node.nodeType); 
+    console.log(node.nodeValue); 
+    console.log("Text node...");
+    console.log(text.nodeName);
+    console.log(text.nodeType);
+    console.log(text.nodeValue);
+</script>
+</body>
