@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #outer{
+            width: 215px;
+            margin: 50px auto;
+            padding: 10px;
+            background-color: greenyellow;
+            text-align: center;
+        }
+        </style>
+        <script type="text/javascript">
+            var list = ["resource/rabbit1.jpg",
+            "resource/rabbit2.jpg",
+            "resource/rabbit3.jpg",
+            "resource/rabbit4.jpg",
+            "resource/rabbit5.jpg"]
+            var index = 0;
+            console.log("section1");
+            console.log(window);
+            window.onload = function() {
+                console.log("onload1");
+                var prev = document.getElementById("prev");
+                var next = document.getElementById("next");
+                var img = document.getElementsByTagName("img")[0];
+                prev.onclick = function() {
+                    console.log("prev1", index);
+                    if (index > 0)
+                         index--
+                    img.src = list[index];
+                }
+                next.onclick = function() {
+                    console.log("next1", index);
+                    if (index < (list.length -1))
+                         index++
+                    img.src = list[index];
+                }
+            }
+        </script>
+
+
+
+    </head>
+    <body>
+        <div id="outer">
+            <p id="info">1 / 5</p>
+            <img src="resource/rabbit1.jpg" alt="rabbit"/>
+            <button id="prev">Previous one</button>
+            <button id="next">Next one</button>
+        </div>
+
+        <script type="text/javascript">
+            var list = ["resource/rabbit1.jpg",
+            "resource/rabbit2.jpg",
+            "resource/rabbit3.jpg",
+            "resource/rabbit4.jpg",
+            "resource/rabbit5.jpg"]
+            //var index = 0;
+            console.log("section2");
+            console.log(window);
+            window.onload = function() {
+                console.log("onload2");
+                var prev = document.getElementById("prev");
+                var next = document.getElementById("next");
+                var img = document.getElementsByTagName("img")[0];
+                var info = document.getElementById("info");
+                
+                prev.onclick = function() {
+                    console.log("prev2", index);
+                    index--;
+                    if (index < 0)
+                    index = 0;
+                    img.src = list[index];
+                    info.innerHTML =  (index+1) + " / " + list.length
+                }
+                next.onclick = function() {
+                    console.log("next2", index);
+                    index++
+                    if (index > (list.length -1))
+                    index = list.length -1;
+                    img.src = list[index];
+                    info.innerHTML =  (index+1) + " / " + list.length
+                }
+            }
+        </script>
+    </body>
+</html>
