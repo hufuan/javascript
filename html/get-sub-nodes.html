@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Conten-Type" content="text/html"; charset="UTF-8">
+        <title>Untitled document</title>
+        <link rel="stylesheet" type="text/css" href="style/css.css" />
+        <script type="text/javascript">
+
+            function myClick(idStr , fun) {
+                var btn = document.getElementById(idStr);
+                btn.onclick = fun;
+            }
+            window.onload = function(){
+                var btn1 = document.getElementById('btn01');
+                btn1.onclick = function(){
+                    var bj = document.getElementById("bj");
+                    alert(bj.innerHTML);
+                }
+
+                var btn04 = document.getElementById("btn04");
+                btn04.onclick = function(){
+                    var city = document.getElementById("city")
+                    var lis = document.getElementById("li");
+                    alert(li.length)
+                    for (var i = 0; i < lis.length; i++){
+                        alert(lis[i].innerHTML);
+                    }
+                }
+
+                var btn05 = document.getElementById("btn05")
+                btn05.onclick = function () {
+                    var city = document.getElementById("city");
+                    var cns = city.children;
+                    alert(cns.length)
+                    for (var i = 0; i < cns.length; i++){
+                        console.log(cns[i].innerHTML);
+                    }
+                }
+
+                var btn06 = document.getElementById("btn06")
+                btn06.onclick = function () {
+                    var phone = document.getElementById("phone");
+                    console.log(phone);
+                    var fir = phone.firstChild;
+                    fir = phone.firstElementChild;
+                    console.log(fir.innerHTML)
+                }
+                myClick("btn07", function(){
+                    var bj = document.getElementById('bj');
+                    var pn = bj.parentNode;
+                    console.log(pn.innerHTML);
+                })
+
+                myClick('btn08', function(){
+                    var and= document.getElementById("android");
+                    var ps = and.previousElementSibling;
+                    console.log(ps);
+                })
+
+                myClick('btn09', function(){
+                    var um = document.getElementById("username")
+                    um.value ="fine!"
+                    console.log(um.value);
+                })
+
+                myClick('btn10', function(){
+                    var bj = document.getElementById("bj")
+                    //console.log(bj.innerHTML);
+                    var fc = bj.firstChild;
+                    console.log(fc.nodeValue)
+                })
+            }
+        </script>
+    </head>
+    <body>
+        <div id = "total">
+                <div class="inner">
+                    <p>
+                        which city do you like?
+                    </p>
+                    <ul id="city">
+                        <li id="bj">Beijing</li>
+                        <li>Shanghai</li>
+                        <li>Tokyo</li>
+                        <li>Soul</li>
+                    </ul>
+                    <br>
+                    <br>
+                    <p>
+                        which gme do you like?
+                    </p>
+                    <ul id="game">
+                        <li>red polic</li>
+                        <li>live</li>
+                        <li>crazy car</li>
+                        <li>beast</li>
+                    </ul>
+                    <br>
+                    <br>
+
+                    <p>
+                        which OS do you like?
+                    </p>
+                    <ul id="phone">
+                        <li>IOS</li>
+                        <li id="android">Android</li>
+                        <li>Windows</li>
+                        <li>Windows Phone</li>
+                    </ul>
+                    <br>
+                    <br>
+
+                </div>
+                <div class="inner">
+                    gender:
+                    <input class="hello" type="radio" name="gender", value="male">
+                    Male
+                    <input class="hello" type="radio" name="gender", value="female">
+                    Female
+                    <input class="hello" type="radio" name="gender", value="other">
+                    Other
+                    <br>
+                    <br>
+                    name:
+                    <input type="text" name="name" id="username" value="abcde">
+                </div>
+        </div>
+        <div>
+            <button id="btn01" >btn01</button>
+            <button id="btn04" >btn04</button>
+            <button id="btn05" >btn05</button>
+            <button id="btn06" >btn06</button>
+            <button id="btn07" >btn07</button>
+            <button id="btn08" >btn08</button>
+            <button id="btn09" >btn09</button>
+            <button id="btn10" >btn10</button>
+        </div>
+    </body>
+</html>
