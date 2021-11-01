@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+
+        </title>
+        <script type="text/javascript">
+            window.onload = function()  {
+                myClick("btn01", function() {
+                    console.log("btn01 clicked");
+                    var li = document.createElement("li");
+                    var text = document.createTextNode('Guangzhou');
+                    li.appendChild(text);
+                    var city = document.getElementById('city');
+                    console.log(city.innerHTML)
+                    city.appendChild(li);
+                })
+
+                //btn02
+                myClick("btn02", function(){
+                    var li = document.createElement("li");
+                    var gzText = document.createTextNode("Guangzhou");
+                    li.append(gzText);
+                    var bj = document.getElementById('bj');
+                    var city = document.getElementById('city');
+                    city.insertBefore(li, bj);
+                });
+
+                myClick("btn03", function(){
+                    var li = document.createElement("li");
+                    var gzText = document.createTextNode("Guangzhou");
+                    li.append(gzText);
+                    var bj = document.getElementById('bj');
+                    var city = document.getElementById('city');
+                    city.replaceChild(li, bj);
+                })
+
+                myClick("btn04", function(){
+                   // var city = document.getElementById('city');
+                   //city.removeChild(bj);
+                    var bj = document.getElementById('bj');
+                    bj.parentNode.removeChild(bj);
+
+                });
+                myClick("btn05", function(){
+                    var city = document.getElementById("city");
+                    console.log(city.innerHTML);
+                })
+
+                myClick("btn06", function(){
+                    var bj = document.getElementById("bj");
+                    bj.innerHTML="Tianjin";
+                })
+                myClick("btn07", function(){
+                   // var city = document.getElementById("city");
+                   // city.innerHTML += "<li>Guangzhou</li>"
+                   var city = document.getElementById("city");
+                   var li = document.createElement("li");
+                   li.innerHTML = "Guangzhou";
+                   city.append(li);
+                })
+               
+            }
+            function myClick(idStr, fun){
+                var btn = document.getElementById(idStr);
+                btn.onclick = fun;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="total">
+            <div class="inner">
+                <p>
+                    which city do you like?
+                </p>
+                <ul id="city">
+                    <li id="bj">Beijing</li>
+                    <li>Shanghai</li>
+                    <li>Tokyo</li>
+                    <li>Soul</li>
+                </ul>
+            </div>
+        </div>
+        <div id="btnlist">
+            <div> <button id="btn01">create "guangzhou" node, to #city</button></div>
+            <div> <button id="btn02">move "guangzhou" in fron of "Beijing"</button></div>
+            <div> <button id="btn03">use "guangzhou" replacing "bj"</button></div>
+            <div> <button id="btn04">delete #bj node</button></div>
+            <div> <button id="btn05">read #city HTML code</button></div>
+            <div> <button id="btn06">set #bj HTML code</button></div>
+            <div> <button id="btn07">add "guangzhou" in the last</button></div>
+        </div>
+    </body>
+</html>

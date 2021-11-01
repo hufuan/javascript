@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+			example.com
+        </title>
+        <style type="text/css">
+            #box1 {
+                width: 100px;
+                height: 100px;
+               
+            }
+        </style>
+        <script type="text/javascript">
+            window.onload = function()  {
+                var box1 = document.getElementById("box1");
+               // var box2 = document.getElementById("box2");
+                var btn01= document.getElementById("btn01");
+                btn01.onclick = function(){
+                    //box1.style.width = "400px"
+                    //box1.style.height= "400px";
+                    //box1.style.backgroundColor = "yellow"
+                    console.log(box1.style.width)
+                    var obj = getComputedStyle(box1, null);
+                    console.log(obj.width);
+                    console.log(obj.height);
+                    console.log(obj.backgroundColor);
+                }
+
+                
+
+			}
+            function getStyle(obj, name){
+                if (window.getcomputedStyle){
+                    return getComputedStyle(obj, null)[name];
+                } else {
+                    return obj.currentStyle[name];
+                }
+            }
+        </script>
+    </head>
+    <body>
+
+        <button id="btn01">click me</button>
+       
+        <div  id="box1" ></div>
+        <br/>
+        <br/>
+    </body>
+</html>
