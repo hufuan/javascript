@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+			example.com
+        </title>
+        <style type="text/css">
+            #info{
+                width: 300px;
+                height: 500px;
+                background-color: #bfa;
+                overflow: auto;
+            }
+        </style>
+        <script type="text/javascript">
+            console.log("hello")
+            window.onload = function()  {
+               var info = document.getElementById("info");
+               var inputs = document.getElementsByTagName("input")
+               info.onscroll = function () {
+                   console.log("scrolled", "info.scrollHeight", info.scrollHeight, "info.scrollTop", 
+                   info.scrollTop, "info.clientHeight: ", info.clientHeight);
+                   if (info.scrollHeight - info.scrollTop < (info.clientHeight +5 )){
+                       console.log("to bottom");
+                       inputs[0].disabled = false;
+                       inputs[1].disabled = false;
+                   }
+               }
+			}
+        </script>
+    </head>
+    <body>
+       <h3>hello </h3>
+       <p id="info">
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll down please scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+            please scroll downplease scroll downplease scroll downplease scroll downplease scroll downplease scroll down
+       </p>
+       <input type="checkbox" disabled="disabled"/>  I have read the protocol!    
+       <input type="submit" value="register" disabled="disabled"/>
+    </body>
+</html>
